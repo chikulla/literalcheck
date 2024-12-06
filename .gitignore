@@ -123,4 +123,4 @@ go.work.sum
 .env
 
 # built asset
-litcheck
+literalcheck

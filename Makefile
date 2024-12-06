@@ -1,4 +1,4 @@
 build:
-	go build -o litcheck ./cmd/main.go
+	go build -o literalcheck ./cmd/literalcheck/main.go
 test:
 	go test ./...
