@@ -5,8 +5,29 @@ import (
 	"go/token"
 	"go/types"
 
+	"github.com/golangci/plugin-module-register/register"
 	"golang.org/x/tools/go/analysis"
 )
+
+func init() {
+	register.Plugin("literalcheck", New)
+}
+
+type LiteralcheckPlugin struct{}
+
+func New() (register.LinterPlugin, error) {
+	return &LiteralcheckPlugin{}, nil
+}
+
+func (l *LiteralcheckPlugin) BuildAnalyzers() ([]*analysis.Analyzer, error) {
+	return []*analysis.Analyzer{
+		Analyzer,
+	}, nil
+}
+
+func (l *LiteralcheckPlugin) GetLoadMode() string {
+	return register.LoadModeSyntax
+}
 
 // Analyzer is the definition of the custom linter
 var Analyzer = &analysis.Analyzer{
