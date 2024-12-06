@@ -1,6 +1,6 @@
 linters-settings:
   custom:
-    example:
+    literalcheck:
       type: module
       description: For string, int, and float type aliases, inspect codes that use raw literals instead of type aliases.
       original-url: github.com/chikulla/literalcheck

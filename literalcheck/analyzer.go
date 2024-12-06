@@ -15,7 +15,7 @@ func init() {
 
 type LiteralcheckPlugin struct{}
 
-func New() (register.LinterPlugin, error) {
+func New(conf any) (register.LinterPlugin, error) {
 	return &LiteralcheckPlugin{}, nil
 }
 
@@ -38,12 +38,12 @@ var Analyzer = &analysis.Analyzer{
 
 func run(pass *analysis.Pass) (interface{}, error) {
 	for _, file := range pass.Files {
-		inspectFile(file, pass)
+		InspectFile(file, pass)
 	}
 	return nil, nil
 }
 
-func inspectFile(file *ast.File, pass *analysis.Pass) {
+func InspectFile(file *ast.File, pass *analysis.Pass) {
 	ins := nodeInspector{pass}
 	ast.Inspect(file, ins.inspect)
 }

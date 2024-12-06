@@ -3,7 +3,7 @@ package literalcheck_test
 import (
 	"testing"
 
-	"github.com/chikulla/literalcheck"
+	"github.com/chikulla/literalcheck/literalcheck"
 	"golang.org/x/tools/go/analysis/analysistest"
 )
 

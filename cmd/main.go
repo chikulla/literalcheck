@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/chikulla/literalcheck"
-	"golang.org/x/tools/go/analysis/unitchecker"
+	"github.com/chikulla/literalcheck/literalcheck"
+	"golang.org/x/tools/go/analysis/singlechecker"
 )
 
 func main() {
-	unitchecker.Main(literalcheck.Analyzer)
+	singlechecker.Main(literalcheck.Analyzer)
 }
